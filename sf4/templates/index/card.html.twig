@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+    Templates
+{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+
+    {% block header %}{% endblock %}
+
+    {% block sidebar %}
+
+    {% endblock %}
+
+<h1>Templates de carte de visite</h1>
+<ul>
+    {% for card in cards %}
+        <li> Nom de la carte de visite : {{ card.name|e }}</li>
+        <li> Description : {{ card.description|e }}</li>
+        <li> Active? : {% if {{ card.active|e }} =='1' %}<div id="cercle"></div>class="uk-active" {% endif %}{{ card.active|e }}</li>
+        <li> Premium? : {% if {{ card.premium|e }} =='1' %}<div id="cercle"></div>class="uk-active" {% endif %}{{ card.premium|e }}</li>
+        <li> Preview :{{ card.preview|e }}</li>   
+        </br>
+    {% endfor %}
+</ul>
+
+
+    {% block footer %}{% endblock %}
+
+{% endblock %}

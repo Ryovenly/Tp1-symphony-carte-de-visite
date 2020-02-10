@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Création de carte de visites en ligne{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.6/dist/css/uikit.min.css" />
+
+        <style>
+        #cercle {
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background: green;
+        }
+
+        </style>
+        {% endblock %}
+
+        <!-- UIkit CSS -->
+
+
+<!-- UIkit JS -->
+
+
+
+    </head>
+    <body>
+
+    {% block header %}
+        <h1>Bienvenue chez Visito </h1>
+            <nav class="uk-navbar-container" uk-navbar>
+            <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav">
+                <li {% if app.request.attributes.get("_route") =='homepage' %}class="uk-active" {% endif %}><a href="{{ path('homepage')}}" >Accueil</a></li>
+                <li {% if app.request.attributes.get("_route") =='template' %}class="uk-active" {% endif %}><a href="{{ path('template')}}">Template</a></li>
+            </ul>
+        </div>
+        </nav>
+    {% endblock %}
+
+    {% block sidebar %}
+
+        <h2>Catégories</h2>
+        <ul class="uk-nav">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        </ul>
+
+    {% endblock %}
+
+
+    {% block footer %}
+        <div>Copyright Site Visito </div>
+    {% endblock %}
+
+        {% block body %}
+        
+        
+        {% endblock %}  
+        {% block javascripts %}
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.6/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.6/dist/js/uikit-icons.min.js"></script>
+        {% endblock %}
+    </body>
+</html>
