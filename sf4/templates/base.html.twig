@@ -32,8 +32,8 @@
             <nav class="uk-navbar-container" uk-navbar>
             <div class="uk-navbar-left">
             <ul class="uk-navbar-nav">
-                <li {% if app.request.attributes.get("_route") =='homepage' %}class="uk-active" {% endif %}><a href="{{ path('homepage')}}" >Accueil</a></li>
-                <li {% if app.request.attributes.get("_route") =='template' %}class="uk-active" {% endif %}><a href="{{ path('template')}}">Template</a></li>
+                <li <a href="{{ path('homepage')}}" >Accueil</a></li>
+                <li <a href="{{ path('template')}}">Template</a></li>
             </ul>
         </div>
         </nav>
