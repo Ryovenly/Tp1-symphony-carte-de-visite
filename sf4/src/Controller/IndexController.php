@@ -18,15 +18,15 @@ class IndexController extends AbstractController
         ]);
     }
 
-                /**
+    /**
      * @Route("/templates", name="templates")
      */
     public function templates(CardRepository $cardRepository)
     {
-        $card = $cardRepository->findAll();
+        $cards = $cardRepository->findAll();
 
-        return $this->render('index/templates.html.twig',
-        ['card' =>$cardRepository->findAll()]
+        return $this->render('index/card.html.twig',
+        ['cards' =>$cardRepository->findAll()]
      );
     }
 }

@@ -5,29 +5,34 @@
     Templates
 {% endblock %}
 
-{% block stylesheets %}{% endblock %}
+{% block stylesheets %}{{ parent() }}{% endblock %}
 
 {% block body %}
 
-    {% block header %}{% endblock %}
 
     {% block sidebar %}
+
+        <h2>Catégories</h2>
+        <ul class="uk-nav">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        </ul>
 
     {% endblock %}
 
 <h1>Templates de carte de visite</h1>
 <ul>
     {% for card in cards %}
-        <li> Nom de la carte de visite : {{ card.name|e }}</li>
-        <li> Description : {{ card.description|e }}</li>
-        <li> Active? : {% if {{ card.active|e }} =='1' %}<div id="cercle"></div>class="uk-active" {% endif %}{{ card.active|e }}</li>
-        <li> Premium? : {% if {{ card.premium|e }} =='1' %}<div id="cercle"></div>class="uk-active" {% endif %}{{ card.premium|e }}</li>
-        <li> Preview :{{ card.preview|e }}</li>   
+        <li> Nom de la carte de visite  {{ card.name|e }}</li>
+        <li> Description  {{ card.description|e }}</li>
+        <li> Active?  {% if card.active|e  == '1' %}<div id="cercle"></div> {% endif %}</li>
+        <li> Premium?  {% if card.premium|e  == '1' %}<div id="cercle"></div> {% endif %}</li>
+        <li> Preview  {{ card.preview|e }}</li>   
         </br>
     {% endfor %}
 </ul>
 
 
-    {% block footer %}{% endblock %}
 
 {% endblock %}
